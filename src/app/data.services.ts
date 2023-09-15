@@ -7,7 +7,7 @@ export class DataServices{
 
     constructor(private httpClient:HttpClient){}
 
-    cargarempleados(){
+    cargarEmpleados(){
 
         return this.httpClient.get('https://mis-clientes-1d810-default-rtdb.firebaseio.com/datos.json')
     }
@@ -32,6 +32,21 @@ export class DataServices{
         this.httpClient.put(url,empleado).subscribe(
 
             response=>console.log("Se ha modificado correctamente el empleado: " + response),
+
+            error=>console.log("Error: " + error),
+            
+        );
+
+    }
+
+    eliminarEmpleado(indice:number){
+
+        let url='https://mis-clientes-1d810-default-rtdb.firebaseio.com/datos/' + indice + '.json';
+
+
+        this.httpClient.delete(url).subscribe(
+
+            response=>console.log("Se ha eliminado correctamente el empleado: " + response),
 
             error=>console.log("Error: " + error),
             

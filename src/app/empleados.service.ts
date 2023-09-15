@@ -1,7 +1,9 @@
 import { Injectable } from "@angular/core"; 
+import { DataServices } from "./data.services";
+
 import { Empleado } from "./empleado.model";
 import { ServicioEmpleadosService } from "./servicio-empleados.service";
-import { DataServices } from "./data.services";
+
 
 @Injectable()
 export class EmpleadosService{
@@ -18,7 +20,7 @@ export class EmpleadosService{
 
     obtenerEmpleados(){
 
-        return this.dataService.cargarempleados();
+        return this.dataService.cargarEmpleados();
     }
 
     empleados:Empleado[]=[];
@@ -56,6 +58,10 @@ export class EmpleadosService{
     eliminarEmpleado(indice:number){
 
         this.empleados.splice(indice,1);
+
+        this.dataService.eliminarEmpleado(indice);
+
+        if(this.empleados!=null) this.dataService.guardarEmpleados(this.empleados);
 
     }
     
