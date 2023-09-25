@@ -4,8 +4,6 @@ import { Empleado } from '../empleado.model';
 import { EmpleadosService } from '../empleados.service';
 import { ServicioEmpleadosService } from '../servicio-empleados.service';
 
-
-
 @Component({
   selector: 'app-actualiza-component',
   templateUrl: './actualiza-component.component.html',
@@ -67,6 +65,7 @@ export class ActualizaComponentComponent implements OnInit {
       this.empleadosService.actualizarEmpleado(this.indice, miEmpleado);
 
       this.router.navigate(['']);
+      
     }else{
 
     this.empleadosService.eliminarEmpleado(this.indice);

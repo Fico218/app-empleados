@@ -24,6 +24,4 @@ export class EmpleadoHijoCComponent implements OnInit {
     this.arrayCaracteristicas.push(nuevaCaracteristica);
   }
 
-
-
 }

@@ -25,6 +25,17 @@ export class EmpleadosService{
 
     empleados:Empleado[]=[];
 
+    /*
+    empleados:Empleado[]=[
+
+        new Empleado("Juan","Diaz","presidente",7500),
+        new Empleado("Ana","Martins","Directora",5500),
+        new Empleado("Maria","Fernandez","Jefa Seccion",3300),
+        new Empleado("Laura","Lopez","Administrativo",2000),
+
+    ];
+    */
+
     agregarEmpleadoServicio(empleado:Empleado){
 
         this.servicioVentanaEmergente.muestraMensaje("Persona que se va a agregar: " + "\n" + 

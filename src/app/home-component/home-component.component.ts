@@ -3,13 +3,12 @@ import { Empleado } from '../empleado.model';
 import { ServicioEmpleadosService } from '../servicio-empleados.service';
 import { EmpleadosService } from '../empleados.service';
 
-
 @Component({
   selector: 'app-home-component',
   templateUrl: './home-component.component.html',
   styleUrls: ['./home-component.component.css']
 })
-export class HomeComponentComponent {
+export class HomeComponentComponent implements OnInit{
   titulo = 'Listado de Empleados';
 
   constructor(private miServicio:ServicioEmpleadosService, private empleadoService:EmpleadosService) {
